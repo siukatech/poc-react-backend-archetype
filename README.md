@@ -40,6 +40,7 @@ The attribute `name` MUST be same as `pom.xml`'s `artifactId`.
 
 
 ### Code gen command
+**Template**  
 ```shell
 mvn archetype:generate \
   -DarchetypeGroupId=<archetype-groupId> \
@@ -47,9 +48,11 @@ mvn archetype:generate \
   -DarchetypeVersion=<archetype-version> \
   -DgroupId=<my.groupid> \
   -DartifactId=<my-artifactId> \
-  -Dversion=<my-version>
+  -Dversion=<my-version> \
+  -Dpackage=com.siukatech.poc.test.artifact
 ```
 
+**Example**
 ```shell
 mvn archetype:generate \
   -DarchetypeGroupId=com.siukatech.poc \
@@ -57,13 +60,20 @@ mvn archetype:generate \
   -DarchetypeVersion=0.0.1-SNAPSHOT \
   -DgroupId=com.siukatech.poc \
   -DartifactId=test-artifact \
-  -Dversion=0.0.1-SNAPSHOT
+  -Dversion=0.0.1-SNAPSHOT \
+  -Dpackage=com.siukatech.poc.test.artifact
+```
+
+**Example (one line version)**  
+```shell
+cd ../../ && mvn clean install && cd target && mkdir codegen && cd codegen && mvn archetype:generate -DarchetypeGroupId=com.siukatech.poc -DarchetypeArtifactId=maven-archetype-generator -DarchetypeVersion=0.0.1-SNAPSHOT -DgroupId=com.siukatech.poc -DartifactId=test-artifact -Dversion=0.0.1-SNAPSHOT -Dpackage=com.siukatech.poc.test.artifact
 ```
 
 
 
 # Git
-**Script template**  
+## Script
+**Template**  
 ```shell
 git init
 git branch -m main
@@ -73,7 +83,7 @@ git commit -m "initial commit"
 git push origin main
 ```
 
-**Script example**
+**Example**
 ```shell
 git init
 git branch -m main

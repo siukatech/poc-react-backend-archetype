@@ -17,17 +17,28 @@
         </requiredProperty>
     </requiredProperties>
 
+    <!--
+        filtered="true": perform substitution to ${xxx} in files, including ${package}.
+        packaged="true": add folders that aligns to the ${package} mentioned.
+    -->
     <fileSets>
-        <fileSet filtered="true" packaged="true">
+        <fileSet encoding="UTF-8" filtered="true" packaged="true" >
             <directory>src/main/java</directory>
-            <includes>
-                <include>**/*.java</include>
-            </includes>
         </fileSet>
-        <fileSet>
-            <directory>src/main/liberty/config</directory>
+        <fileSet encoding="UTF-8" filtered="true" packaged="true" >
+            <directory>src/test/java</directory>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true" >
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true" >
+            <directory>src/test/resources</directory>
+        </fileSet>
+        <fileSet encoding="UTF-8" filtered="true" >
+            <directory></directory>
             <includes>
-                <include>server.xml</include>
+                <include>.gitignore</include>
+                <include>README.md</include>
             </includes>
         </fileSet>
     </fileSets>
